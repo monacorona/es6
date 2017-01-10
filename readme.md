@@ -225,9 +225,9 @@ And for properties where the key is the same as the variable storing the value:
 
 ```js
 // es5
-let x = 1
-let y = 2
-let obj = {x:x, y:y}
+var x = 1
+var y = 2
+var obj = {x:x, y:y}
 
 // vs
 //es6
