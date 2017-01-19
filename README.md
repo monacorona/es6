@@ -74,11 +74,12 @@ of functions:
 ```js
 // es5
 var a = 1;
-(function(){
-  var a = 2
+function myFunction() {
+  a = 2;
   console.log(a);
-})();
+}
 console.log(a);
+myFunction();
 ```
 
 ES6 introduces the concept of block scoping, which allows us to limit the scope
