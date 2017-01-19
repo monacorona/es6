@@ -428,8 +428,6 @@ There are lots more features of ES6 that we have not covered:
 - [Proxies](https://ponyfoo.com/articles/es6-proxies-in-depth)
 - [Reflection and meta-programming](http://www.2ality.com/2011/01/reflection-and-meta-programming-in.html)
 
-You can also check out the extra exercises in the exercises folder for more practice in ES6.
-
 ## Resources
 
 - [You Don't Know ES6](https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20%26%20beyond)
@@ -438,8 +436,5 @@ You can also check out the extra exercises in the exercises folder for more prac
 - [Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals)
 
 ## Additional Practice
-Update the following exercises to include ES6 features.
+You can also check out the extra exercises in the exercises folder for more practice in ES6.
 
-- [ATM](https://github.com/ga-wdi-exercises/atm)
-- [Cash Register](https://github.com/ga-wdi-exercises/cash-register)
-- [Choose Your Own Adventure](https://github.com/ga-wdi-exercises/choose_your_own_adventure_js)
