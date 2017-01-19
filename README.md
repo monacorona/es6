@@ -130,8 +130,7 @@ var a = 2;
 
 ### You do: Block Scope Exercises (10 / 35)
 
-1. https://github.com/sf-wdi-33/es6/exercises/blob/master/01-var-let-const.js
-2. https://github.com/sf-wdi-33/es6/exercises//blob/master/02-const-complex.js
+Check out exercises 1 and 2 in the exercises folder.
 
 ### Default parameters (5 / 40)
 
@@ -148,8 +147,7 @@ hello("Jesse") // Hello, Jesse
 
 #### You do: Default Parameters Practice (10 / 50)
 
-1. https://github.com/sf-wdi-33/es6/exercises/blob/master/04-default-parameters.js
-2. https://github.com/sf-wdi-33/es6/exercises/blob/master/05-default-parameters.js
+Check out exercises 3 and 4 in the exercises folder.
 
 ### Destructuring (10 / 60)
 
@@ -194,10 +192,8 @@ function greetUser ({ name, location })  {
 
 #### You do: Destructuring Practice (15 / 75)
 
-1. https://github.com/sf-wdi-33/es6/exercises/blob/master/06-deconstruction.js
+Check out exercise 5.
 
-
-## Break (15 / 90)
 
 ### Concise Object Properties and Methods (5 / 95)
 
@@ -238,7 +234,7 @@ let obj = {x,y}
 
 #### You do: Concise methods and properties practice (10 / 105)
 
-1. https://github.com/sf-wdi-33/es6/exercises/blob/master/07-concise-properties-and-methods.js
+Check out exercise 6.
 
 ### Template Literals (5 / 110)
 
@@ -265,7 +261,7 @@ console.log(`Hello. My name is ${name}. You killed my ${killee}. Prepare to ${pr
 
 #### You do: Template Exercise (10 / 120)
 
-1. https://github.com/sf-wdi-33/es6/exercises/blob/master/09-templates.js
+Check out exercise 8.
 
 ### Arrow Functions (15 / 135)
 
@@ -354,7 +350,7 @@ let add = (x,y) => (
 
 #### You do: Arrow functions (15 / 150)
 
-1. https://github.com/sf-wdi-33/es6/exercises/blob/master/11-arrow-functions.js
+Check out exercise 10.
 
 
 ## Legacy Browser Support
@@ -420,7 +416,7 @@ console.log(days)
 
 #### You do: Spread Practice
 
-1. https://github.com/sf-wdi-33/es6/exercises/blob/master/03-spread-practice.js
+Check out exercise 11.
 
 ## Keep Going
 
@@ -431,6 +427,8 @@ There are lots more features of ES6 that we have not covered:
 - [Generators](https://davidwalsh.name/es6-generators)
 - [Proxies](https://ponyfoo.com/articles/es6-proxies-in-depth)
 - [Reflection and meta-programming](http://www.2ality.com/2011/01/reflection-and-meta-programming-in.html)
+
+You can also check out the extra exercises in the exercises folder for more practice in ES6.
 
 ## Resources
 
