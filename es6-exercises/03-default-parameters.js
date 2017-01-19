@@ -19,7 +19,3 @@ myRide.location // "Walmart"
 
 myRide.driveTo()
 myRide.location // "Home"
-
-
-
-// TODO: Convert the driveTo method to use correct optional parameters
