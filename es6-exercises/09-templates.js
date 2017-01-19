@@ -1,18 +1,23 @@
-// Given the data in the starting code, use a template string to produce the
-// following string. Make sure the numbers, names, and team name actually come
-// from the data.
+// Read the section on tagged template literals here:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals
 
-//     There are 4 people on the tooling team.
-//     Their names are Jennie, Ronald, Martin, Anneli.
+// Write a function html that can be used as a template string tag, and produces
+// a string in which all the interpolated pieces are escaped as HTML. Use the
+// supplied escapeHTML function to do the escaping.
 
-const teamName = "tooling"
-const people = [{name: "Jennie", role: "senior"},
-                {name: "Ronald", role: "junior"},
-                {name: "Martin", role: "senior"},
-                {name: "Anneli", role: "junior"}]
+// Remember that a tag function gets an array of in-between strings as its first
+// argument, and then the interpolated values as further arguments.
 
-let message = YOUR_CODE_HERE
+function html(...) {
+  // Your code here
+}
 
-console.log(message)
+const mustEscape = '<>&"'
+console.log(html`You should escape the ${mustEscape.length} characters “${mustEscape}” in HTML`)
 
-// source: http://marijnhaverbeke.nl/talks/es6_falsyvalues2015/exercises/#The_tooling_team
+function escapeHTML(string) {
+  return String(string).replace(/"/g, "&quot;").replace(/</g, "&lt;")
+  	.replace(/>/g, "&gt;").replace(/&/g, "&amp;")
+}
+
+// source: http://marijnhaverbeke.nl/talks/es6_falsyvalues2015/exercises/#HTML_templating
