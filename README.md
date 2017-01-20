@@ -9,7 +9,7 @@
 - Use deconstruction to extract values from objects and arrays
 - Use default parameters and arrow functions
 
-## Framing (15 / 15)
+## Framing
 
 Today, we are going to be looking at a new way to write Javascript by playing with some of the new features released in ES6.
 
@@ -48,7 +48,7 @@ the new syntax.
 
 ## New Features
 
-### Block Scope (10 / 25)
+### Block Scope
 
 <details>
 <summary>What does the concept of scope refer to in JS?</summary>
@@ -129,11 +129,11 @@ var a = 2;
 // throws an error
 ```
 
-### You do: Block Scope Exercises (10 / 35)
+### You do: Block Scope Exercises
 
 Check out exercises 1 and 2 in the exercises folder.
 
-### Default parameters (5 / 40)
+### Default parameters
 
 With ES6, we now have the option add set a default value for any of our functions' parameters.
 
@@ -146,11 +146,11 @@ hello() // Hello, stranger
 hello("Jesse") // Hello, Jesse
 ```
 
-#### You do: Default Parameters Practice (10 / 50)
+#### You do: Default Parameters Practice
 
 Check out exercises 3 and 4 in the exercises folder.
 
-### Destructuring (10 / 60)
+### Destructuring
 
 Destructuring assignment makes it possible to extract data from complex data
 types (arrays and objects) into distinct variables:
@@ -191,12 +191,12 @@ function greetUser ({ name, location })  {
 //You would call both by using: greetUser(user)
 ```
 
-#### You do: Destructuring Practice (15 / 75)
+#### You do: Destructuring Practice
 
 Check out exercise 5.
 
 
-### Concise Object Properties and Methods (5 / 95)
+### Concise Object Properties and Methods
 
 ES6 allows us to shorten method definitions from:
 
@@ -233,11 +233,11 @@ let y = 2
 let obj = {x,y}
 ```
 
-#### You do: Concise methods and properties practice (10 / 105)
+#### You do: Concise methods and properties practice
 
 Check out exercise 6.
 
-### Template Literals (5 / 110)
+### Template Literals
 
 Here's how we previously used variables as placeholders to evaluate strings.
 
@@ -260,11 +260,11 @@ console.log(`Hello. My name is ${name}. You killed my ${killee}. Prepare to ${pr
 
 ```
 
-#### You do: Template Exercise (10 / 120)
+#### You do: Template Exercise
 
 Check out exercise 8.
 
-### Arrow Functions (15 / 135)
+### Arrow Functions
 
 Arrow functions are a new shorthand syntax for defining anonymous functions:
 
@@ -349,7 +349,7 @@ let add = (x,y) => (
 )
 ```
 
-#### You do: Arrow functions (15 / 150)
+#### You do: Arrow functions
 
 Check out exercise 10.
 
