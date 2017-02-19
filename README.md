@@ -154,7 +154,7 @@ var a = 2;
 
 `const` is also block scoped.
 
-### You do: Block Scope Exercises
+#### You do: Block Scope Exercises
 
 Complete exercises 1 and 2 in the exercises folder.
 
