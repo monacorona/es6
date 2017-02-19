@@ -2,49 +2,49 @@
 
 ## Learning Objectives
 
-- Explain the history of ES and JS
-- Compare/contrast features of ES5 and ES6
-- Explain when to use `var` vs `let` vs `const`
-- Use template literals to interpolate variables and strings
-- Use deconstruction to extract values from objects and arrays
-- Use default parameters and arrow functions
+- Explain the history of ECMAScript and JavaScript
+- Compare/contrast features of ECMAScript5 and ECMAScript6
+- Explain when to use `var`, `let`, and `const`
+- Interpolate strings and  variables with template literals
+- Extract values from objects and arrays with deconstruction
+- Write shorter function declarations with arrow functions
+- Use default parameters in JavaScript
 
 ## Framing
 
 Today, we are going to be looking at a new way to write Javascript by playing with some of the new features released in ES6.
 
-#### JS vs ES
+#### JavaScript vs ECMAScript
 
 The JavaScript standard is officially referred to as [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript).
 
-As JS is so widely used that any changes would affect the whole web, there is a body known as TC39 or Ecma International, which formally approves official versions for release.
+JavaScript is so widely used that any changes would affect the whole web. Because of this, a body known as TC39 or Ecma International formally approves official versions of ECMAScript for release.
 
-Each version contains features / changes to be added to the language.
+Each version contains features or changes to be added to the language. The most recent is ECMAScript6.  Most people shorten ECMAScript versions to ES, like 'ES6'.
 
-In short, I like to think of ECMAScript as the language, and JavaScript an implementation of that language.
+In short, ECMAScript defines a language, and JavaScript is an implementation of that language.
 
-#### Evolution of JS
 
-> Check out [this awesome visualization](http://shaunlebron.github.io/solar-system-of-js/#0) of the current state of the JS universe
+#### Evolution of JavaScript
+
+> Complete [this awesome visualization](http://shaunlebron.github.io/solar-system-of-js/#0) of the current state of the JavaScript universe
 
 Condensed timeline:
 
 - 1999 - ES3 released, the first widespread use of the language.
-- ES4 never released, largely due to  political reasons
+- ES4 never released, largely due to  political reasons.
 - 2009 - ES5 released, what we've been writing so far in class.
-- 2015 - ES6 published releasing a wide set of new features and syntax
+- 2015 - ES6 publishe,d releasing a wide set of new features and syntax.
 
 #### Why now?
 
-Many plugins, frameworks and modules still use ES5, as browser support for
-the new version of the language is [still not universal](http://caniuse.com/#search=es6), but the new syntax and features
-of ES6 are increasingly becoming more and more popular among many open-source projects and in the developer world at large. Also,
-you are very likely to see it pop up in the documentation of some of the technologies we will be using in this course.
+Many plugins, frameworks, and modules still use ES5 because it can take time to refactor projects and because browser support for
+the new version of the language is [still not quite universal](http://caniuse.com/#search=es6).  However, the new syntax and features
+of ES6 are increasingly becoming more and more widespread among open-source projects and in the developer world at large. Also, you are very likely to see ES6 in the documentation of some technologies we use in this course.
 
-Today is all about exploring some of the [new features](https://github.com/lukehoban/es6features) and getting comfortable with
-the new syntax.
+Today is all about exploring some of the [new features](https://github.com/lukehoban/es6features) of ES6 and getting comfortable with the new syntax.
 
-> For more backstory, we recommend checking out [this talk](https://www.youtube.com/watch?v=PlmsweSNhTw) from Brendan Eich on what he views as the future of JS.
+> For more backstory, we recommend checking out [this talk](https://www.youtube.com/watch?v=PlmsweSNhTw) from Brendan Eich on what he views as the future of JavaScript.
 
 ## New Features
 
@@ -68,8 +68,7 @@ Through the use of functions to create new local scopes.
 
 #### `let`
 
-So far, the primary way to control scope in an application has been through the use
-of functions:
+So far, the primary way to control scope in an application has been through the use of functions:
 
 ```js
 // es5
@@ -113,6 +112,11 @@ for(let j = 0; j < 10; j++){
 console.log("outside loop:", j)
 //throws an error
 ```
+
+`let` is great for temporary variables that don't need to last through the entire function.  
+
+Unlike with `var`, `let` or `const` will throw an error if you redeclare the same variable within the scope.
+
 #### `const`
 
 ES6 introduces another keyword for declaring variables: `const`
@@ -129,32 +133,68 @@ var a = 2;
 // throws an error
 ```
 
+`const` is also block scoped.
+
 ### You do: Block Scope Exercises
 
-Check out exercises 1 and 2 in the exercises folder.
+Complete exercises 1 and 2 in the exercises folder.
 
 ### Default parameters
 
-With ES6, we now have the option add set a default value for any of our functions' parameters.
+<details>
+<summary>How would you set a missing argument in an ES5 function?</summary>
+
+The way we previously dealt with optional arguments in JavaScript was with the `||` operator:
 
 ```js
-function hello( name = "stranger"){
+function hello(name){
+  name = name || "stranger";
+  console.log("Hello, " + name);
+}
+
+hello() // Hello, stranger
+hello("Jessie") // Hello, Jessie!
+```
+</details>
+
+
+With ES6, we now have the option add set a default value directly as part of the functions' parameters.
+
+```js
+function hello(name = "stranger"){
   console.log("Hello, " + name)
 }
 
 hello() // Hello, stranger
-hello("Jesse") // Hello, Jesse
+hello("Jessie") // Hello, Jessie
 ```
+
+One of the main benefits is that this makes it easier to allow optional arguments that might be falsy. As an example, what could go wrong with the ES5 optional argument strategy in the function below?
+
+```js
+function pluralize(baseWord, suffix){
+  suffix = suffix || 'es';
+  return baseWord + suffix;
+}
+
+console.log(pluralize('shrimp', ''));
+```
+
+<details><summary>How could you handle intentionally falsy argument values with the ES5 strategy that relies on the `||` operator?</summary>
+You could more specifically check whether the argument is `undefined`:
+
+`suffix === undefined ? 'es' : suffix`
+</details>
 
 #### You do: Default Parameters Practice
 
-Check out exercises 3 and 4 in the exercises folder.
+Complete exercises 3 and 4 in the exercises folder.
 
 ### Destructuring
 
-Destructuring assignment makes it possible to extract data from complex data
-types (arrays and objects) into distinct variables:
+"Destructuring" is a kind of assignment that makes it possible to pull out multiple variables from data inside arrays and objects.
 
+Here's an array example:
 ```js
 let [a,b] = [1,2]
 a //= 1
@@ -166,7 +206,7 @@ second //= 2
 third //= 3
 ```
 
-This also applies to objects:
+And an example with an object:
 
 ```js
 var user = {
@@ -176,7 +216,57 @@ var user = {
    profile_url:  "http://api.co/users/1",
    location: "DC"
 }
+```
 
+
+#### You do: Destructuring Practice
+
+Complete exercise 5.
+
+### Concise Object Properties and Methods
+
+ES6 allows us to shorten object literals in a few ways.
+
+First, we can omit `function` for method definitions within object literals.  
+
+```js
+// es5
+var car = {
+  drive: function(){
+    console.log("vroom")
+  }
+}
+```
+
+Spot the differences between the ES5 code above and the ES6 code below.
+
+```js
+// es6
+let car = {
+  drive(){
+    console.log("vroom")
+  }
+}
+```
+
+Second, when a key is the same as the variable storing the value, there's a new shorthand for that as well.
+
+```js
+// es5
+var x = 1
+var y = 2
+var obj = {x:x, y:y}
+
+
+//es6
+let x = 1
+let y = 2
+let obj = {x,y}
+```
+
+We can combine these features to rewrite some function definitions. What is happening below?
+
+```js
 // ES5
 function greetUser (user) {
   console.log("Hello " + user.name + ", how's the weather in " + user.location)
@@ -188,120 +278,82 @@ function greetUser ({ name, location })  {
   console.log("Hello " + name + ", how's the weather in " + location)
 }
 
-//You would call both by using: greetUser(user)
-```
-
-#### You do: Destructuring Practice
-
-Check out exercise 5.
-
-
-### Concise Object Properties and Methods
-
-ES6 allows us to shorten method definitions from:
-
-```js
-var car = {
-  drive: function(){
-    console.log("vroom")
-  }
-}
-```
-
-to
-
-```js
-let car = {
-  drive(){
-    console.log("vroom")
-  }
-}
-```
-
-And for properties where the key is the same as the variable storing the value:
-
-```js
-// es5
-var x = 1
-var y = 2
-var obj = {x:x, y:y}
-
-// vs
-//es6
-let x = 1
-let y = 2
-let obj = {x,y}
+// You would call both by using: greetUser(user) if you have a user variable
+// set up with the proper structure.
 ```
 
 #### You do: Concise methods and properties practice
 
-Check out exercise 6.
+Complete exercise 6.
 
 ### Template Literals
 
-Here's how we previously used variables as placeholders to evaluate strings.
+We previously used "concatenation" to insert variables into strings.
 
 ```js
 var name = "Inigo Montoya"
-var killee = "father"
+var killee = "my father"
 var prepareTo = "die"
 
-console.log("Hello. My name is "+ name + ". You killed my " + killee +". Prepare to " + prepareTo)
+console.log("Hello. My name is "+ name + ". You killed " + killee +". Prepare to " + prepareTo + ".")
 ```
 
-In ES6, we can interpolate variables using template literal syntax: `\`` (backticks)
+In ES6, we can "interpolate" strings with variables using template literal syntax. You'll recognize template literal strings because they're surrounded by backtics (`\`\``).
 
 ```js
 let name = "Inigo Montoya"
-let killee = "father"
+let killee = "my father"
 let prepareTo = "die"
 
-console.log(`Hello. My name is ${name}. You killed my ${killee}. Prepare to ${prepareTo}`)
+console.log(`Hello. My name is ${name}. You killed ${killee}. Prepare to ${prepareTo}.`)
 
 ```
 
+There are serious security issues with inserting user input into your code.
+
+
 #### You do: Template Exercise
 
-Check out exercise 8.
+Complete exercise 8.
 
 ### Arrow Functions
 
 Arrow functions are a new shorthand syntax for defining anonymous functions:
 
 ```js
-let foods = ["pizza","mac n cheese","lasagna"]
-foods.forEach( food => console.log(`I love ${food}`) )
-
-// vs the old
-
+// es5
+var foods = ["pizza","mac n cheese","lasagna"]
 foods.forEach(function(food){
   console.log("I love " + food)
 })
+
+// es6
+let foods = ["pizza","mac n cheese","lasagna"]
+foods.forEach( food => console.log(`I love ${food}`) )
 ```
 
-If there is more than one argument to the anonymous function, wrap
-them in parens:
+If there is more than one parameter for the anonymous function, the parameters have to be wrapped in parentheses.
 
 ```js
 let foods = ["pizza","mac n cheese","lasagna"]
 foods.forEach( (food,i) => console.log(`My #${i} favorite food is ${food}`) )
 ```
 
-Arrow functions also have the benefit of not changing the value of `this`:
+Arrow functions also have the benefit of not creating a new value of `this` inside the function. Compare the two code samples below.
 
 ```js
+// es5
 var pizza = {
   temperature: 0,
   toppings: ["cheese", "ham", "pineapple"],
   bake() {
-    setInterval(function(){
-      this.temperature++ // doesnt work because this is GLOBAL. The setInterval function belongs to the window object.
+    setInterval(function(){ // note that the setInterval function belongs to the window object
+      this.temperature++
     }, 1000)
   }
 }
 
-// vs ES6
-
+// es6
 var pizza = {
   temperature: 0,
   toppings: ["cheese", "ham", "pineapple"],
@@ -313,25 +365,24 @@ var pizza = {
 }
 
 pizza.bake();
-pizza.temperature //will display the return value of setInterval, which is the ID value of the timer that was set
+console.log(pizza.temperature);
 ```
 
-Additionally, the `return` statement is not needed with single line arrow functions. There is an implicit return.
+Additionally, the `return` statement is not needed with **single line** arrow functions. There is an implicit return.
 
 ```js
+// es6
 let add = (x, y) => x + y
 add(2, 3) //5
 ```
 
 ```js
-//ES5
-function subtract(x,y){
-  x+y
-}
-//undefined in console
+// es5
+function subtract(x,y){ x+y } // es5 needs explicit return
+subtract(2, 3) // undefined
 ```
 
-If the function is multi-line, you need to explicitly return:
+If the arrow function is multi-line, you still need to explicitly return:
 
 ```js
 let add = (x,y) => {
@@ -341,7 +392,7 @@ add(2,3)
 //undefined in console
 ```
 
-Though the single line return can be faked by wrapping the expression in parentheses:
+The single line return can be faked by wrapping the expression in parentheses:
 
 ```js
 let add = (x,y) => (
@@ -351,7 +402,7 @@ let add = (x,y) => (
 
 #### You do: Arrow functions
 
-Check out exercise 10.
+Complete exercise 10.
 
 
 ## Legacy Browser Support
@@ -362,73 +413,6 @@ If you need to support a legacy browser, check out the following tools:
 - [Traceur](https://github.com/google/traceur-compiler/wiki/Getting-Started)
 - [Babel](https://babeljs.io/)
 
-## Bonus
-
-### Spread operator
-
-The spread operator `...` allows an expression to be expanded into multiple elements.
-
-This is useful for separating an array into individual elements:
-
-```js
-var dimensions = [10, 5, 2];
-var volume = function(height, width, length){
-  return height * width * length;
-}
-volume(...dimensions);
-
-// versus
-
-volume(dimensions[0], dimensions[1], dimensions[2])
-```
-
-This also makes it very easy to create copies of an array in functions where
-mutation occurs:
-
-```js
-var days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
-function reversedDays(arr){
-  return arr.reverse()
-}
-console.log(reversedDays(days))
-// but now days is no longer in order
-console.log(days)
-
-// To deal with this, we can either:
-
-function reversedDays(arr){
-  var newArray = []
-  for(let i = 0; i < arr.length; i++){
-    newArray.push(arr[i])
-  }
-  return newArray.reverse()
-}
-console.log(reversedDays(days))
-console.log(days)
-
-// or... (<- pun)
-
-function reversedDays(arr){
-  return [...arr].reverse()
-}
-console.log(reversedDays(days))
-console.log(days)
-```
-
-#### You do: Spread Practice
-
-Check out exercise 11.
-
-## Keep Going
-
-There are lots more features of ES6 that we have not covered:
-
-- [Symbols](http://es6-features.org/#SymbolType)
-- [Iterator & for..of operator](http://es6-features.org/#IteratorForOfOperator)
-- [Generators](https://davidwalsh.name/es6-generators)
-- [Proxies](https://ponyfoo.com/articles/es6-proxies-in-depth)
-- [Reflection and meta-programming](http://www.2ality.com/2011/01/reflection-and-meta-programming-in.html)
-
 ## Resources
 
 - [You Don't Know ES6](https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20%26%20beyond)
@@ -437,5 +421,74 @@ There are lots more features of ES6 that we have not covered:
 - [Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals)
 
 ## Additional Practice
-You can also check out the extra exercises in the exercises folder for more practice in ES6.
 
+**Template Literals**: There are serious security issues with inserting user input into your code. Complete exercise 9 to learn about and practice a more secure approach.
+
+**Classes** ES6 adds class-based object-oriented programming.  Research ES6 classes to complete exercises 12 and 13.
+
+**Getters and Setters** ES6 adds special support for getter and setter methods for objects.  Research getters and setters, and complete exercises 7 and 14.
+
+**Spread operator**: The spread operator `...` allows an expression to be expanded into multiple elements. Complete exercises 11. <details><summary>Click to expand more information about the spread operator.</summary>
+This is useful for separating an array into individual elements:
+
+```js
+var dimensions = [10, 5, 2];
+var volume = function(height, width, length){
+  return height * width * length;
+}
+
+// es5
+volume(dimensions[0], dimensions[1], dimensions[2]);
+
+// es6
+volume(...dimensions);
+```
+
+This also makes it very easy to create copies of an array for functions where we want to modify data without changing the input array:
+
+```js
+var days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
+function reversedDays(arr){
+  return arr.reverse();
+}
+// this returns a reversed version of the days array, ...
+console.log(reversedDays(days))
+// ... but now the original days array is reversed, too
+console.log(days)
+```
+
+There are strategies to fix this in either version of JavaScript.
+
+```js
+// es5
+function reversedDays(arr){
+  var newArray = [];
+  for(let i = 0; i < arr.length; i++){
+    newArray.push(arr[i]);
+  }
+  return newArray.reverse();
+}
+
+// es6
+function reversedDays(arr){
+  return [...arr].reverse()
+}
+
+// either way, we're now keeping the original days array in order
+console.log(reversedDays(days))
+console.log(days)
+```
+</details>
+
+
+**Modules**: ES6 added support for modules to help organize code. Research modules, and complete exercise 15.
+
+## Keep Going
+
+There are lots more features of ES6 that we have not covered:
+
+- [Symbols](http://es6-features.org/#SymbolType)
+- [Iterator & `for..of` operator](http://es6-features.org/#IteratorForOfOperator)
+- [Generators](https://davidwalsh.name/es6-generators)
+- [Proxies](https://ponyfoo.com/articles/es6-proxies-in-depth)
+- [Reflection and meta-programming](http://www.2ality.com/2011/01/reflection-and-meta-programming-in.html)

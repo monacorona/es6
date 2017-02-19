@@ -26,9 +26,9 @@ const circle = {
   }
 }
 
-// Use `import` and `export` to make the below code work:
-//
+// Use `import` and `export` to make the code below work.
 // e.g. import {pizza} from "jammy"
+YOUR_CODE_HERE
 
 // Do not edit below this line
 console.log(isIsosceles(3,7,7) === true)

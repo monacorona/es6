@@ -11,7 +11,7 @@ const people = [{name: "Jennie", role: "senior"},
                 {name: "Martin", role: "senior"},
                 {name: "Anneli", role: "junior"}]
 
-let message = YOUR_CODE_HERE
+let message = YOUR CODE HERE
 
 console.log(message)
 

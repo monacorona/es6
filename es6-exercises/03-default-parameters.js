@@ -1,6 +1,4 @@
-// The way we previously dealt with optional arguments in JavaScript was with the
-// || operator:
-
+// Convert the driveTo method below to use ES6 default parameters.
 
 var myRide = {
   make: "Ford",
@@ -19,11 +17,3 @@ myRide.location // "Walmart"
 
 myRide.driveTo()
 myRide.location // "Home"
-
-
-
-// TODO: Convert the driveTo method to use correct optional parameters
-
-
-// Bonus! Can you think of a way to handle falsy values and the || operator?
-// with ES5 style optional arguments?

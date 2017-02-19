@@ -1,5 +1,6 @@
-// Write an expression using higher-order array methods (say, filter and reduce)
+// Write an expression using array iterator methods (like filter and reduce)
 // to compute the total value of the machines in the inventory array.
+// Use arrow functions.
 
 const inventory = [
   {type:   "machine", value: 5000},
@@ -9,7 +10,7 @@ const inventory = [
   {type:   "machine", value:   77}
 ]
 
-let totalMachineValue = YOUR_CODE_HERE
+let totalMachineValue = YOUR CODE HERE
 
 console.log(totalMachineValue)
 

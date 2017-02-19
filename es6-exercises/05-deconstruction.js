@@ -2,9 +2,7 @@
 // returns the first rectangle that the given point is inside of.
 
 // Use destructuring and a higher-order function to make this code cleaner.
-// You might want to use the new array method find, which takes a function as
-// argument, and returns the first element in the array (the element, not its
-// index) for which the function returns true.
+// Hint: you might want to use a new array method called find, so look that up!
 
 function detectCollision(objects, point) {
   for (let i = 0; i < objects.length; i++) {
@@ -23,4 +21,4 @@ const myObjects = [
 
 console.log(detectCollision(myObjects, {x: 4, y: 2}))
 
-// source: http://marijnhaverbeke.nl/talks/es6_falsyvalues2015/exercises/#Improve_this_code 
+// source: http://marijnhaverbeke.nl/talks/es6_falsyvalues2015/exercises/#Improve_this_code
