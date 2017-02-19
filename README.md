@@ -1,4 +1,34 @@
-#ES6
+<!--
+Creator: Jesse Shawl
+Last Edited by: Jean, Brianna
+Location: SF
+-->
+
+![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+
+# Trees
+
+### Why is this important?
+<!-- framing the "why" in big-picture/real world examples -->
+*This workshop is important because:*
+
+Trees are a common way of structuring data. They can represent sets of information that are hierarchical in nature, like a file system with directories inside directories. Specialized trees are also used for database indexing (btrees) and spell checking (tries), among many other uses.  They are also easy to work with visually, which makes them a common whiteboarding topic.
+
+### What are the objectives?
+<!-- specific/measurable goal for students to achieve -->
+*After this workshop, developers will be able to:*
+
+- Explain or illustrate the relationship between graphs, trees, and binary search trees.
+- Draw a balanced binary search tree from some given data.
+- Use binary search trees in answering interview style challenge questions.
+
+### Where should we be now?
+<!-- call out the skills that are prerequisites -->
+*Before this workshop, developers should already be able to:*
+
+- Describe the low-level structure of arrays and linked lists.
+- Draw a linked list.
+
 
 ## Learning Objectives
 
@@ -424,9 +454,74 @@ If you need to support a legacy browser, check out the following tools:
 
 **Template Literals**: There are serious security issues with inserting user input into your code. Complete exercise 9 to learn about and practice a more secure approach.
 
-**Classes** ES6 adds class-based object-oriented programming.  Research ES6 classes to complete exercises 12 and 13.
+**Classes** ES6 adds class-based object-oriented programming.  Research ES6 classes to complete exercises 12 and 13. <details><summary>Click to expand more information about ES6 classes.</summary>
 
-**Getters and Setters** ES6 adds special support for getter and setter methods for objects.  Research getters and setters, and complete exercises 7 and 14.
+Classes in ES6 are defined as "syntactical sugar" on top of the prototypal patterns.
+
+```js
+// es5
+function Animal(name){
+  this.name = name
+}
+Animal.prototype.speak = function(){
+  console.log("my name is " + this.name)
+}
+
+function Dog(name){
+  this.name = name
+}
+// prototype-based inheritance
+Dog.prototype = new Animal()
+
+var lassie = new Dog("lassie")
+lassie.speak()
+```
+
+```js
+// es6
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+
+// class-based inheritance
+class Dog extends Animal {
+  speak() {
+    console.log(this.name + ' barks.');
+  }
+}
+
+var lassie = new Dog("lassie")
+```
+</details>
+
+**Getters and Setters** ES6 adds special support for getter and setter methods for objects.  Research getters and setters, and complete exercise 7. If you've done exercise 13, also complete exercise 14. <details><summary>Click to expand more information about getters and setters.</summary>
+
+Getters and setters in ES6 allow us to define pseudo-properties on objects.
+
+Consider the following example:
+
+```js
+let person = {
+  firstName: "Jesse",
+  lastName: "Shawl",
+  get fullName(){   // creates a reader for person.fullName
+    return this.firstName + " " + this.lastName
+  },
+  set fullName(newName){ // creates a writer for person.fullName
+    var names = newName.split(" ")
+    this.firstName = names[0]
+    this.lastName = names[1]
+  }
+}
+person.fullName = "j dog" // notice -  no parentheses
+```
+</details>
+
 
 **Spread operator**: The spread operator `...` allows an expression to be expanded into multiple elements. Complete exercises 11. <details><summary>Click to expand more information about the spread operator.</summary>
 This is useful for separating an array into individual elements:
@@ -481,7 +576,48 @@ console.log(days)
 </details>
 
 
-**Modules**: ES6 added support for modules to help organize code. Research modules, and complete exercise 15.
+**Modules**: ES6 added support for modules to help organize code. Research modules, and complete exercise 15. <details><summary>Click to expand more information about the spread operator.</summary>
+
+Node.js has a module structure with `export` and `require`, like this:
+
+```js
+// ES5
+// routes.js file
+module.exports = {
+  index: function(){
+    console.log("index route");
+  }
+}
+// app.js
+var routes = require("./routes.js");
+routes.index();
+```
+
+ES6 introduces named imports and exports, which allow us to import functions and
+objects with a particular name:
+
+```js
+// ES6
+// routes.js
+export function index(){
+  console.log("index route")
+}
+export function show(){
+  console.log("show route")
+}
+// app.js
+import {index, show} from 'routes'
+index()
+show()
+```
+
+```js
+// ES6
+import * as routes from 'routes'
+routes.index()
+routes.show()
+```
+</details>
 
 ## Keep Going
 
