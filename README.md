@@ -434,6 +434,7 @@ If you need to support a legacy browser, check out the following tools:
 
 ## Resources
 
+- [ES6](http://webapplog.com/es6/)
 - [You Don't Know ES6](https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20%26%20beyond)
 - [Block Scope](https://www.sitepoint.com/joys-block-scoping-es6/)
 - [Destructuring](http://www.2ality.com/2015/01/es6-destructuring.html)
