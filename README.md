@@ -6,21 +6,25 @@ Location: SF
 
 ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
-# Trees
+#ES6
 
 ### Why is this important?
 <!-- framing the "why" in big-picture/real world examples -->
 *This workshop is important because:*
 
-Trees are a common way of structuring data. They can represent sets of information that are hierarchical in nature, like a file system with directories inside directories. Specialized trees are also used for database indexing (btrees) and spell checking (tries), among many other uses.  They are also easy to work with visually, which makes them a common whiteboarding topic.
+ES6 (ECMAScript6) is the most recent version of JavaScript, and more and more tools are being converted to ES6 every day. Additionally, ES6 added many convenient and useful features to JavaScript. Taking advantage of these will make you a more effective developer.
 
 ### What are the objectives?
 <!-- specific/measurable goal for students to achieve -->
 *After this workshop, developers will be able to:*
 
-- Explain or illustrate the relationship between graphs, trees, and binary search trees.
-- Draw a balanced binary search tree from some given data.
-- Use binary search trees in answering interview style challenge questions.
+- Explain the history of ECMAScript and JavaScript.
+- List features of JavaScript added with ES6.
+- Write and read JavaScript code that uses new ES6 features:
+  - Explain block scope and when to use `var`, `let`, and `const`.  
+  - Interpolate strings with template literals.  
+  - Write shorter function declarations with arrow functions.
+  - Use default parameters in JavaScript.
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
@@ -28,21 +32,6 @@ Trees are a common way of structuring data. They can represent sets of informati
 
 - Describe the low-level structure of arrays and linked lists.
 - Draw a linked list.
-
-
-## Learning Objectives
-
-- Explain the history of ECMAScript and JavaScript
-- Compare/contrast features of ECMAScript5 and ECMAScript6
-- Explain when to use `var`, `let`, and `const`
-- Interpolate strings and  variables with template literals
-- Extract values from objects and arrays with deconstruction
-- Write shorter function declarations with arrow functions
-- Use default parameters in JavaScript
-
-## Framing
-
-Today, we are going to be looking at a new way to write Javascript by playing with some of the new features released in ES6.
 
 #### JavaScript vs ECMAScript
 
