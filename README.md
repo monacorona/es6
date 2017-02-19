@@ -441,9 +441,11 @@ If you need to support a legacy browser, check out the following tools:
 
 ## Additional Practice
 
-**Template Literals**: There are serious security issues with inserting user input into your code. Complete exercise 9 to learn about and practice a more secure approach.
+###Template Literals  
+There are serious security issues with inserting user input into your code. Complete exercise 9 to learn about and practice a more secure approach.
 
-**Classes** ES6 adds class-based object-oriented programming.  Research ES6 classes to complete exercises 12 and 13. <details><summary>Click to expand more information about ES6 classes.</summary>
+###Classes  
+ES6 adds class-based object-oriented programming.  Research ES6 classes to complete exercises 12 and 13. <details><summary>Click to expand more information about ES6 classes.</summary>
 
 Classes in ES6 are defined as "syntactical sugar" on top of the prototypal patterns.
 
@@ -488,7 +490,8 @@ var lassie = new Dog("lassie")
 ```
 </details>
 
-**Getters and Setters** ES6 adds special support for getter and setter methods for objects.  Research getters and setters, and complete exercise 7. If you've done exercise 13, also complete exercise 14. <details><summary>Click to expand more information about getters and setters.</summary>
+###Getters and Setters  
+ES6 adds special support for getter and setter methods for objects.  Research getters and setters, and complete exercise 7. If you've done exercise 13, also complete exercise 14. <details><summary>Click to expand more information about getters and setters.</summary>
 
 Getters and setters in ES6 allow us to define pseudo-properties on objects.
 
@@ -512,7 +515,8 @@ person.fullName = "j dog" // notice -  no parentheses
 </details>
 
 
-**Spread operator**: The spread operator `...` allows an expression to be expanded into multiple elements. Complete exercises 11. <details><summary>Click to expand more information about the spread operator.</summary>
+###Spread operator  
+The spread operator `...` allows an expression to be expanded into multiple elements. Complete exercises 11. <details><summary>Click to expand more information about the spread operator.</summary>
 This is useful for separating an array into individual elements:
 
 ```js
@@ -558,14 +562,15 @@ function reversedDays(arr){
   return [...arr].reverse()
 }
 
-// either way, we're now keeping the original days array in order
+// either way, we are now keeping the original days array in order
 console.log(reversedDays(days))
 console.log(days)
 ```
 </details>
 
 
-**Modules**: ES6 added support for modules to help organize code. Research modules, and complete exercise 15. <details><summary>Click to expand more information about the spread operator.</summary>
+###Modules  
+ES6 added support for modules to help organize code. Research modules, and complete exercise 15. <details><summary>Click to expand more information about the spread operator.</summary>
 
 Node.js has a module structure with `export` and `require`, like this:
 
