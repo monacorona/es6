@@ -30,8 +30,11 @@ ES6 (ECMAScript6) is the most recent version of JavaScript, and more and more to
 <!-- call out the skills that are prerequisites -->
 *Before this workshop, developers should already be able to:*
 
-- Describe the low-level structure of arrays and linked lists.
-- Draw a linked list.
+- Read and write ECMAScript5-style JavaScript, including functions.
+- Describe JavaScript scope.
+- Explain the meaning of `this` in JavaScript. 
+- For classes: explain constructor functions and prototypes; recognize prototype-based inheritance. 
+- For `=>`: give an example of a "closure" in JavaScript, and explain what it does.
 
 #### JavaScript vs ECMAScript
 
