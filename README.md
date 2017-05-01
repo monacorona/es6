@@ -23,7 +23,7 @@ ES6 (ECMAScript6) is the most recent version of JavaScript, and more and more to
 - Write and read JavaScript code that uses new ES6 features:
   - Explain block scope and when to use `var`, `let`, and `const`.  
   - Interpolate strings with template literals.  
-  - Write shorter function declarations with arrow functions.
+  - Write shorter function declarations -- that don't create a new `this` -- with arrow functions.
   - Use default parameters in JavaScript.
 - Write and read JavaScript code that uses new ES6 `class` and `object` features:
   - Assign multiple values at once with array or object destructuring.  
@@ -272,7 +272,7 @@ let foods = ["pizza","mac n cheese","lasagna"]
 foods.forEach( (food,i) => console.log(`My #${i} favorite food is ${food}`) )
 ```
 
-Arrow functions also have the benefit of not creating a new value of `this` inside the function. Compare the two code samples below.
+Arrow functions also have the benefit of not creating a new value of `this` inside the function ([read more here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#No_binding_of_this)). Compare the two code samples below.  
 
 ```js
 // es5
