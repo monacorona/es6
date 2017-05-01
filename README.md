@@ -6,7 +6,7 @@ Location: SF
 
 ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
-#ES6
+# ES6
 
 ### Why is this important?
 <!-- framing the "why" in big-picture/real world examples -->
@@ -25,6 +25,10 @@ ES6 (ECMAScript6) is the most recent version of JavaScript, and more and more to
   - Interpolate strings with template literals.  
   - Write shorter function declarations with arrow functions.
   - Use default parameters in JavaScript.
+- Write and read JavaScript code that uses new ES6 `class` and `object` features:
+  - Assign multiple values at once with array or object destructuring.  
+  - Use concise object properties and methods (instead of key-value syntax).  
+  - Organize code in an object-oriented way with ES6 classes.
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
@@ -161,6 +165,37 @@ var a = 2;
 
 Complete exercises 1 and 2 in the exercises folder.
 
+
+### Template Literals
+
+We previously used "concatenation" to insert variables into strings.
+
+```js
+var name = "Inigo Montoya"
+var killee = "my father"
+var prepareTo = "die"
+
+console.log("Hello. My name is "+ name + ". You killed " + killee +". Prepare to " + prepareTo + ".")
+```
+
+In ES6, we can "interpolate" strings with variables using template literal syntax. You'll recognize template literal strings because they're surrounded by backtics (`\`\``).
+
+```js
+let name = "Inigo Montoya"
+let killee = "my father"
+let prepareTo = "die"
+
+console.log(`Hello. My name is ${name}. You killed ${killee}. Prepare to ${prepareTo}.`)
+
+```
+
+There are serious security issues with inserting user input into your code.
+
+
+#### You do: Template Exercise
+
+Complete exercise 8.
+
 ### Default parameters
 
 <details>
@@ -212,131 +247,6 @@ You could more specifically check whether the argument is `undefined`:
 
 Complete exercises 3 and 4 in the exercises folder.
 
-### Destructuring
-
-"Destructuring" is a kind of assignment that makes it possible to pull out multiple variables from data inside arrays and objects.
-
-Here's an array example:
-```js
-let [a,b] = [1,2]
-a //= 1
-b //= 2
-let nums = [1,2,3,4,5]
-let [first, second, third] = nums
-first //= 1
-second //= 2
-third //= 3
-```
-
-And an example with an object:
-
-```js
-var user = {
-   id: 1,
-   name: "Bob",
-   age: 43 ,
-   profile_url:  "http://api.co/users/1",
-   location: "DC"
-}
-```
-
-
-#### You do: Destructuring Practice
-
-Complete exercise 5.
-
-### Concise Object Properties and Methods
-
-ES6 allows us to shorten object literals in a few ways.
-
-First, we can omit `function` for method definitions within object literals.  
-
-```js
-// es5
-var car = {
-  drive: function(){
-    console.log("vroom")
-  }
-}
-```
-
-Spot the differences between the ES5 code above and the ES6 code below.
-
-```js
-// es6
-let car = {
-  drive(){
-    console.log("vroom")
-  }
-}
-```
-
-Second, when a key is the same as the variable storing the value, there's a new shorthand for that as well.
-
-```js
-// es5
-var x = 1
-var y = 2
-var obj = {x:x, y:y}
-
-
-//es6
-let x = 1
-let y = 2
-let obj = {x,y}
-```
-
-We can combine these features to rewrite some function definitions. What is happening below?
-
-```js
-// ES5
-function greetUser (user) {
-  console.log("Hello " + user.name + ", how's the weather in " + user.location)
-}
-
-// In ES6 becomes
-
-function greetUser ({ name, location })  {
-  console.log("Hello " + name + ", how's the weather in " + location)
-}
-
-// You would call both by using: greetUser(user) if you have a user variable
-// set up with the proper structure.
-```
-
-#### You do: Concise methods and properties practice
-
-Complete exercise 6.
-
-### Template Literals
-
-We previously used "concatenation" to insert variables into strings.
-
-```js
-var name = "Inigo Montoya"
-var killee = "my father"
-var prepareTo = "die"
-
-console.log("Hello. My name is "+ name + ". You killed " + killee +". Prepare to " + prepareTo + ".")
-```
-
-In ES6, we can "interpolate" strings with variables using template literal syntax. You'll recognize template literal strings because they're surrounded by backtics (`\`\``).
-
-```js
-let name = "Inigo Montoya"
-let killee = "my father"
-let prepareTo = "die"
-
-console.log(`Hello. My name is ${name}. You killed ${killee}. Prepare to ${prepareTo}.`)
-
-```
-
-There are serious security issues with inserting user input into your code.
-
-
-#### You do: Template Exercise
-
-Complete exercise 8.
 
 ### Arrow Functions
 
@@ -427,29 +337,105 @@ let add = (x,y) => (
 Complete exercise 10.
 
 
-## Legacy Browser Support
 
-Support for ES6 is great! - https://kangax.github.io/compat-table/es6/
+### Destructuring
 
-If you need to support a legacy browser, check out the following tools:
-- [Traceur](https://github.com/google/traceur-compiler/wiki/Getting-Started)
-- [Babel](https://babeljs.io/)
+"Destructuring" is a kind of assignment that makes it possible to pull out multiple variables from data inside arrays and objects.
 
-## Resources
+Here's an array example:
+```js
+let [a,b] = [1,2]
+a //= 1
+b //= 2
+let nums = [1,2,3,4,5]
+let [first, second, third] = nums
+first //= 1
+second //= 2
+third //= 3
+```
 
-- [ES6](http://webapplog.com/es6/)
-- [You Don't Know ES6](https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20%26%20beyond)
-- [Block Scope](https://www.sitepoint.com/joys-block-scoping-es6/)
-- [Destructuring](http://www.2ality.com/2015/01/es6-destructuring.html)
-- [Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals)
+And an example with an object:
 
-## Additional Practice
+```js
+var user = {
+   id: 1,
+   name: "Bob",
+   age: 43 ,
+   profile_url:  "http://api.co/users/1",
+   location: "DC"
+}
+```
 
-###Template Literals  
-There are serious security issues with inserting user input into your code. Complete exercise 9 to learn about and practice a more secure approach.
+#### You do: Destructuring Practice
 
-###Classes  
-ES6 adds class-based object-oriented programming.  Research ES6 classes to complete exercises 12 and 13. <details><summary>Click to expand more information about ES6 classes.</summary>
+Complete exercise 5.
+
+### Concise Object Properties and Methods
+
+ES6 allows us to shorten object literals in a few ways.
+
+First, we can omit `function` for method definitions within object literals.  
+
+```js
+// es5
+var car = {
+  drive: function(){
+    console.log("vroom")
+  }
+}
+```
+
+Spot the differences between the ES5 code above and the ES6 code below.
+
+```js
+// es6
+let car = {
+  drive(){
+    console.log("vroom")
+  }
+}
+```
+
+Second, when a key is the same as the variable storing the value, there's a new shorthand for that as well.
+
+```js
+// es5
+var x = 1
+var y = 2
+var obj = {x:x, y:y}
+
+
+//es6
+let x = 1
+let y = 2
+let obj = {x,y}
+```
+
+We can combine these features to rewrite some function definitions. What is happening below?
+
+```js
+// ES5
+function greetUser (user) {
+  console.log("Hello " + user.name + ", how's the weather in " + user.location)
+}
+
+// In ES6 becomes
+
+function greetUser ({ name, location })  {
+  console.log("Hello " + name + ", how's the weather in " + location)
+}
+
+// You would call both by using: greetUser(user) if you have a user variable
+// set up with the proper structure.
+```
+
+#### You do: Concise methods and properties practice
+
+Complete exercise 6.
+
+
+### Classes  
+ES6 adds class-based object-oriented programming. Click to expand more information about ES6 classes.
 
 Classes in ES6 are defined as "syntactical sugar" on top of the prototypal patterns.
 
@@ -492,9 +478,35 @@ class Dog extends Animal {
 
 var lassie = new Dog("lassie")
 ```
-</details>
 
-###Getters and Setters  
+#### You do: Classes
+
+Research ES6 classes to complete exercises 12 and 13. 
+
+
+
+## Legacy Browser Support
+
+Support for ES6 is great! - https://kangax.github.io/compat-table/es6/
+
+If you need to support a legacy browser, check out the following tools:
+- [Traceur](https://github.com/google/traceur-compiler/wiki/Getting-Started)
+- [Babel](https://babeljs.io/)
+
+## Resources
+
+- [ES6](http://webapplog.com/es6/)
+- [You Don't Know ES6](https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20%26%20beyond)
+- [Block Scope](https://www.sitepoint.com/joys-block-scoping-es6/)
+- [Destructuring](http://www.2ality.com/2015/01/es6-destructuring.html)
+- [Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals)
+
+## Additional Practice
+
+### Template Literals  
+There are serious security issues with inserting user input into your code. Complete exercise 9 to learn about and practice a more secure approach.
+
+### Getters and Setters  
 ES6 adds special support for getter and setter methods for objects.  Research getters and setters, and complete exercise 7. If you've done exercise 13, also complete exercise 14. <details><summary>Click to expand more information about getters and setters.</summary>
 
 Getters and setters in ES6 allow us to define pseudo-properties on objects.
@@ -519,7 +531,7 @@ person.fullName = "j dog" // notice -  no parentheses
 </details>
 
 
-###Spread operator  
+### Spread operator  
 The spread operator `...` allows an expression to be expanded into multiple elements. Complete exercises 11. <details><summary>Click to expand more information about the spread operator.</summary>
 This is useful for separating an array into individual elements:
 
@@ -573,7 +585,7 @@ console.log(days)
 </details>
 
 
-###Modules  
+### Modules  
 ES6 added support for modules to help organize code. Research modules, and complete exercise 15. <details><summary>Click to expand more information about the spread operator.</summary>
 
 Node.js has a module structure with `export` and `require`, like this:
