@@ -29,6 +29,7 @@ ES6 (ECMAScript6) is the most recent version of JavaScript, and more and more to
   - Assign multiple values at once with array or object destructuring.  
   - Use concise object properties and methods (instead of key-value syntax).  
   - Organize code in an object-oriented way with ES6 classes.
+  - Share code among files using ES6 module `export` and `import`.
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
@@ -481,8 +482,66 @@ var lassie = new Dog("lassie")
 
 #### You do: Classes
 
-Research ES6 classes to complete exercises 12 and 13. 
+Practice with ES6 classes to complete exercises 12 and 13. 
 
+
+### Modules  
+
+ES6 added built-in support for modules to help organize code on a larger scale. This feature is not avialable in browsers (yet), but many libraries support it. 
+
+Node.js has a module structure with `export` and `require`, like this:
+
+```js
+// ES5
+// routes.js file
+module.exports = {
+  index: function(){
+    console.log("index route");
+  }
+}
+// app.js
+var routes = require("./routes.js");
+routes.index();
+```
+
+ES6 modules are not the same ([read more here](https://medium.com/the-node-js-collection/an-update-on-es6-modules-in-node-js-42c958b890c)).  They have named `import`s and `export`s, which allow us to import functions and
+objects with a name tied to them:
+
+```js
+// ES6
+// routes.js
+export function index(){
+  console.log("index route")
+}
+export function show(){
+  console.log("show route")
+}
+```
+
+```js
+// app.js
+// import just a few of the exports from a module
+import {index, show} from 'routes'
+index()
+show()
+```
+
+```js
+// ES6
+// import everything from a module
+import * as routes from 'routes'
+routes.index()
+routes.show()
+```
+
+
+```js
+// ES6
+// export a single value
+export default function twice(x) {
+  return x * 2;
+}
+```
 
 
 ## Legacy Browser Support
@@ -584,50 +643,6 @@ console.log(days)
 ```
 </details>
 
-
-### Modules  
-ES6 added support for modules to help organize code. Research modules, and complete exercise 15. <details><summary>Click to expand more information about the spread operator.</summary>
-
-Node.js has a module structure with `export` and `require`, like this:
-
-```js
-// ES5
-// routes.js file
-module.exports = {
-  index: function(){
-    console.log("index route");
-  }
-}
-// app.js
-var routes = require("./routes.js");
-routes.index();
-```
-
-ES6 introduces named imports and exports, which allow us to import functions and
-objects with a particular name:
-
-```js
-// ES6
-// routes.js
-export function index(){
-  console.log("index route")
-}
-export function show(){
-  console.log("show route")
-}
-// app.js
-import {index, show} from 'routes'
-index()
-show()
-```
-
-```js
-// ES6
-import * as routes from 'routes'
-routes.index()
-routes.show()
-```
-</details>
 
 ## Keep Going
 
