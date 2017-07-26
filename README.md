@@ -14,34 +14,31 @@ Location: SF
 
 ES6 (ECMAScript6) is the most recent version of JavaScript, and more and more tools are being converted to ES6 every day. Additionally, ES6 added many convenient and useful features to JavaScript. Taking advantage of these will make you a more effective developer.
 
-### What are the objectives?
-<!-- specific/measurable goal for students to achieve -->
-*After this workshop, developers will be able to:*
+## Learning Objectives
 
-- Explain the history of ECMAScript and JavaScript.
-- List features of JavaScript added with ES6.
-- Write and read JavaScript code that uses new ES6 features:
-  - Explain block scope and when to use `var`, `let`, and `const`.  
-  - Interpolate strings with template literals.  
-  - Write shorter function declarations -- that don't create a new `this` -- with arrow functions.
-  - Use default parameters in JavaScript.
-- Write and read JavaScript code that uses new ES6 `class` and `object` features:
-  - Assign multiple values at once with array or object destructuring.  
-  - Use concise object properties and methods (instead of key-value syntax).  
-  - Organize code in an object-oriented way with ES6 classes.
-  - Share code among files using ES6 module `export` and `import`.
+- Explain the history of ES and JS
+- Compare/contrast features of ES5 and ES6
+- Explain when to use `var` vs `let` vs `const`
+- Use template literals to interpolate variables and strings
+- Use deconstruction to extract values from objects and arrays
+- Use default parameters and arrow functions
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
 *Before this workshop, developers should already be able to:*
 
-- Read and write ECMAScript5-style JavaScript, including functions.
+- Read and write ES5-style JavaScript, including functions.
 - Describe JavaScript scope.
 - Explain the meaning of `this` in JavaScript. 
 - For classes: explain constructor functions and prototypes; recognize prototype-based inheritance. 
 - For `=>`: give an example of a "closure" in JavaScript, and explain what it does.
 
-#### JavaScript vs ECMAScript
+
+
+## Framing
+
+Today, we are going to be looking at a new way to write Javascript by playing with some of the new features released in ES6.
+
 
 The JavaScript standard is officially referred to as [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript).
 
